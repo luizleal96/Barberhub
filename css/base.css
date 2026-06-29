@@ -1,0 +1,95 @@
+/* =========================================================
+   BASE — reset, tipografia global, acessibilidade
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-normal);
+  color: var(--color-text-primary);
+  background: var(--color-cream-100);
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+p { margin: 0; }
+
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+a {
+  color: var(--color-brass-600);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: var(--fs-base);
+}
+
+/* ---- Acessibilidade: foco visível sempre ---- */
+:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* Remove o outline padrão apenas quando :focus-visible é suportado */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ---- Skip link (navegação por teclado) ---- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-charcoal-900);
+  color: var(--color-cream-100);
+  padding: var(--space-3) var(--space-5);
+  z-index: 200;
+  border-radius: 0 0 var(--radius-sm) 0;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+/* ---- Visually hidden (para leitores de tela) ---- */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Seleção de texto ---- */
+::selection {
+  background: var(--color-brass-400);
+  color: var(--color-charcoal-900);
+}

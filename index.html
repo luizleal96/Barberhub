@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BarberHub — Gestão completa para barbearias</title>
+  <meta name="description" content="Cadastre clientes, barbeiros, serviços, agendamentos e pagamentos em um só lugar. Sistema de gestão para barbearias.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/ledger.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Saltar para o conteúdo principal</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="#top" class="brand" aria-label="BarberHub, página inicial">
+        <span class="brand-mark" aria-hidden="true">✂</span>
+        <span class="brand-name">Barber<em>Hub</em></span>
+      </a>
+
+      <nav class="main-nav" role="navigation" aria-label="Navegação principal">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#modulos">Módulos</a></li>
+          <li><a href="#ledger" class="nav-cta-link">Painel de cadastros</a></li>
+        </ul>
+      </nav>
+
+      <a href="#ledger" class="btn btn-primary btn-header">Abrir o livro</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Gestão de barbearia, sem complicação</p>
+          <h1 id="hero-title">
+            Cada corte tem uma história.<br>
+            <span class="hero-accent">O seu livro de agendamentos guarda todas.</span>
+          </h1>
+          <p class="hero-lede">
+            Cadastre clientes, barbeiros, serviços, horários e pagamentos em um único painel —
+            pensado para ser tão simples quanto folhear um caderno de agendamentos.
+          </p>
+          <div class="hero-actions">
+            <a href="#ledger" class="btn btn-primary btn-lg">
+              Começar cadastro
+              <span aria-hidden="true">→</span>
+            </a>
+            <a href="#modulos" class="btn btn-ghost btn-lg">Ver módulos</a>
+          </div>
+          <dl class="hero-stats" aria-label="Resumo do sistema">
+            <div class="hero-stat">
+              <dt>Módulos de cadastro</dt>
+              <dd>6</dd>
+            </div>
+            <div class="hero-stat">
+              <dt>Passos por cadastro</dt>
+              <dd>até 5</dd>
+            </div>
+            <div class="hero-stat">
+              <dt>Tempo médio</dt>
+              <dd>2 min</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="ledger-peek">
+            <div class="ledger-peek-tab">Agendamentos</div>
+            <div class="ledger-peek-row">
+              <span class="ledger-peek-dot"></span>
+              <div class="ledger-peek-lines">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+              </div>
+            </div>
+            <div class="ledger-peek-row">
+              <span class="ledger-peek-dot ledger-peek-dot--gold"></span>
+              <div class="ledger-peek-lines">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+              </div>
+            </div>
+            <div class="ledger-peek-row">
+              <span class="ledger-peek-dot"></span>
+              <div class="ledger-peek-lines">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE / COMO FUNCIONA ============ -->
+    <section class="about" id="sobre" aria-labelledby="about-title">
+      <div class="section-inner">
+        <h2 id="about-title">Um painel, cinco cadernos</h2>
+        <p class="section-lede">
+          Assim como um barbeiro tradicional mantém um caderno para cada parte do negócio,
+          o BarberHub organiza tudo em módulos claros — sem telas lotadas, sem confusão.
+        </p>
+
+        <ol class="how-steps">
+          <li class="how-step">
+            <span class="how-step-num" aria-hidden="true">1</span>
+            <h3>Escolha o módulo</h3>
+            <p>Clientes, barbeiros, serviços, agendamentos ou pagamentos.</p>
+          </li>
+          <li class="how-step">
+            <span class="how-step-num" aria-hidden="true">2</span>
+            <h3>Preencha os dados</h3>
+            <p>Formulário curto, direto, com validação em tempo real.</p>
+          </li>
+          <li class="how-step">
+            <span class="how-step-num" aria-hidden="true">3</span>
+            <h3>Salve o registro</h3>
+            <p>Confirmação clara de que o cadastro foi concluído.</p>
+          </li>
+          <li class="how-step">
+            <span class="how-step-num" aria-hidden="true">4</span>
+            <h3>Veja na lista</h3>
+            <p>Cada módulo mostra os registros já cadastrados.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MÓDULOS (overview cards) ============ -->
+    <section class="modules" id="modulos" aria-labelledby="modules-title">
+      <div class="section-inner">
+        <h2 id="modules-title">Os seis módulos do sistema</h2>
+        <p class="section-lede">Clique em qualquer módulo para abrir o caderno correspondente e cadastrar um novo registro.</p>
+
+        <div class="module-grid" role="list">
+          <a class="module-card" role="listitem" href="#ledger" data-open-tab="clientes">
+            <span class="module-icon" aria-hidden="true">👤</span>
+            <h3>Clientes</h3>
+            <p>Nome, contato e histórico de visitas.</p>
+          </a>
+          <a class="module-card" role="listitem" href="#ledger" data-open-tab="barbeiros">
+            <span class="module-icon" aria-hidden="true">✂</span>
+            <h3>Barbeiros</h3>
+            <p>Equipe, especialidades e horários de trabalho.</p>
+          </a>
+          <a class="module-card" role="listitem" href="#ledger" data-open-tab="servicos">
+            <span class="module-icon" aria-hidden="true">💈</span>
+            <h3>Serviços</h3>
+            <p>Corte, barba, combo — com preço e duração.</p>
+          </a>
+          <a class="module-card" role="listitem" href="#ledger" data-open-tab="agendamentos">
+            <span class="module-icon" aria-hidden="true">📅</span>
+            <h3>Agendamentos</h3>
+            <p>Data, horário, cliente, barbeiro e serviço.</p>
+          </a>
+          <a class="module-card" role="listitem" href="#ledger" data-open-tab="pagamentos">
+            <span class="module-icon" aria-hidden="true">💳</span>
+            <h3>Pagamentos</h3>
+            <p>Valor, forma de pagamento e status.</p>
+          </a>
+          <a class="module-card" role="listitem" href="#ledger" data-open-tab="produtos">
+            <span class="module-icon" aria-hidden="true">🧴</span>
+            <h3>Produtos</h3>
+            <p>Controle estoque, valor e mínimo.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LEDGER (painel de cadastros - signature element) ============ -->
+    <section class="ledger-section" id="ledger" aria-labelledby="ledger-title">
+      <div class="section-inner">
+        <h2 id="ledger-title">Painel de cadastros</h2>
+        <p class="section-lede">Abra uma aba do caderno para cadastrar ou consultar registros.</p>
+
+        <div class="ledger" data-ledger>
+          <!-- Tabs -->
+          <div class="ledger-tabs" role="tablist" aria-label="Módulos de cadastro">
+            <button class="ledger-tab is-active" role="tab" aria-selected="true" aria-controls="panel-clientes" id="tab-clientes" data-tab="clientes">
+              <span class="ledger-tab-icon" aria-hidden="true">👤</span> Clientes
+            </button>
+            <button class="ledger-tab" role="tab" aria-selected="false" aria-controls="panel-barbeiros" id="tab-barbeiros" data-tab="barbeiros">
+              <span class="ledger-tab-icon" aria-hidden="true">✂</span> Barbeiros
+            </button>
+            <button class="ledger-tab" role="tab" aria-selected="false" aria-controls="panel-servicos" id="tab-servicos" data-tab="servicos">
+              <span class="ledger-tab-icon" aria-hidden="true">💈</span> Serviços
+            </button>
+            <button class="ledger-tab" role="tab" aria-selected="false" aria-controls="panel-agendamentos" id="tab-agendamentos" data-tab="agendamentos">
+              <span class="ledger-tab-icon" aria-hidden="true">📅</span> Agendamentos
+            </button>
+            <button class="ledger-tab" role="tab" aria-selected="false" aria-controls="panel-pagamentos" id="tab-pagamentos" data-tab="pagamentos">
+              <span class="ledger-tab-icon" aria-hidden="true">💳</span> Pagamentos
+            </button>
+            <button class="ledger-tab" role="tab" aria-selected="false" aria-controls="panel-produtos" id="tab-produtos" data-tab="produtos">
+              <span class="ledger-tab-icon" aria-hidden="true">🧴</span> Produtos
+            </button>
+          </div>
+
+          <!-- Page (panels render here via JS, but keep accessible static skeleton) -->
+          <div class="ledger-page">
+
+            <!-- PANEL: CLIENTES -->
+            <section class="ledger-panel is-active" id="panel-clientes" role="tabpanel" aria-labelledby="tab-clientes" tabindex="0">
+              <div class="panel-header">
+                <div>
+                  <h3>Cadastro de clientes</h3>
+                  <p class="panel-subtitle">Guarde os dados de contato de quem você atende.</p>
+                </div>
+                <button class="btn btn-primary" data-new="clientes">+ Novo cliente</button>
+              </div>
+
+              <form class="record-form" id="form-clientes" data-form="clientes" novalidate hidden>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="cli-nome">Nome completo <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="cli-nome" name="nome" required autocomplete="name" maxlength="120">
+                    <span class="field-error" id="err-cli-nome" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="cli-telefone">Telefone <span class="required" aria-hidden="true">*</span></label>
+                    <input type="tel" id="cli-telefone" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000">
+                    <span class="field-error" id="err-cli-telefone" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="cli-email">E-mail</label>
+                    <input type="email" id="cli-email" name="email" autocomplete="email">
+                    <span class="field-error" id="err-cli-email" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="cli-nascimento">Data de nascimento</label>
+                    <input type="date" id="cli-nascimento" name="dataNascimento">
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="cli-obs">Observações</label>
+                  <textarea id="cli-obs" name="observacoes" rows="2" maxlength="300" placeholder="Preferências, alergias, etc."></textarea>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-text" data-cancel>Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar cliente</button>
+                </div>
+              </form>
+
+              <div class="panel-list" data-list="clientes" aria-live="polite"></div>
+            </section>
+
+            <!-- PANEL: BARBEIROS -->
+            <section class="ledger-panel" id="panel-barbeiros" role="tabpanel" aria-labelledby="tab-barbeiros" tabindex="0" hidden>
+              <div class="panel-header">
+                <div>
+                  <h3>Cadastro de barbeiros</h3>
+                  <p class="panel-subtitle">Equipe e especialidades disponíveis na barbearia.</p>
+                </div>
+                <button class="btn btn-primary" data-new="barbeiros">+ Novo barbeiro</button>
+              </div>
+
+              <form class="record-form" id="form-barbeiros" data-form="barbeiros" novalidate hidden>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="barb-nome">Nome completo <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="barb-nome" name="nome" required autocomplete="name" maxlength="120">
+                    <span class="field-error" id="err-barb-nome" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="barb-telefone">Telefone <span class="required" aria-hidden="true">*</span></label>
+                    <input type="tel" id="barb-telefone" name="telefone" required autocomplete="tel" placeholder="(00) 00000-0000">
+                    <span class="field-error" id="err-barb-telefone" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="barb-especialidade">Especialidade <span class="required" aria-hidden="true">*</span></label>
+                    <select id="barb-especialidade" name="especialidade" required>
+                      <option value="">Selecione...</option>
+                      <option value="corte">Corte masculino</option>
+                      <option value="barba">Barba</option>
+                      <option value="combo">Corte e barba</option>
+                      <option value="coloracao">Coloração</option>
+                    </select>
+                    <span class="field-error" id="err-barb-especialidade" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="barb-turno">Turno de trabalho</label>
+                    <select id="barb-turno" name="turno">
+                      <option value="manha">Manhã</option>
+                      <option value="tarde">Tarde</option>
+                      <option value="integral">Integral</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-text" data-cancel>Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar barbeiro</button>
+                </div>
+              </form>
+
+              <div class="panel-list" data-list="barbeiros" aria-live="polite"></div>
+            </section>
+
+            <!-- PANEL: SERVIÇOS -->
+            <section class="ledger-panel" id="panel-servicos" role="tabpanel" aria-labelledby="tab-servicos" tabindex="0" hidden>
+              <div class="panel-header">
+                <div>
+                  <h3>Cadastro de serviços</h3>
+                  <p class="panel-subtitle">Os serviços oferecidos, com preço e duração.</p>
+                </div>
+                <button class="btn btn-primary" data-new="servicos">+ Novo serviço</button>
+              </div>
+
+              <form class="record-form" id="form-servicos" data-form="servicos" novalidate hidden>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="serv-nome">Nome do serviço <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="serv-nome" name="nome" required maxlength="80" placeholder="Ex: Corte degradê">
+                    <span class="field-error" id="err-serv-nome" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="serv-preco">Preço (R$) <span class="required" aria-hidden="true">*</span></label>
+                    <input type="number" id="serv-preco" name="preco" required min="0" step="0.01" inputmode="decimal" placeholder="0,00">
+                    <span class="field-error" id="err-serv-preco" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="serv-duracao">Duração (minutos) <span class="required" aria-hidden="true">*</span></label>
+                    <input type="number" id="serv-duracao" name="duracaoMinutos" required min="5" step="5" placeholder="30">
+                    <span class="field-error" id="err-serv-duracao" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="serv-categoria">Categoria</label>
+                    <select id="serv-categoria" name="categoria">
+                      <option value="cabelo">Cabelo</option>
+                      <option value="barba">Barba</option>
+                      <option value="combo">Combo</option>
+                      <option value="estetica">Estética</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-text" data-cancel>Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar serviço</button>
+                </div>
+              </form>
+
+              <div class="panel-list" data-list="servicos" aria-live="polite"></div>
+            </section>
+
+            <!-- PANEL: AGENDAMENTOS -->
+            <section class="ledger-panel" id="panel-agendamentos" role="tabpanel" aria-labelledby="tab-agendamentos" tabindex="0" hidden>
+              <div class="panel-header">
+                <div>
+                  <h3>Cadastro de agendamentos</h3>
+                  <p class="panel-subtitle">Marque o horário cruzando cliente, barbeiro e serviço.</p>
+                </div>
+                <button class="btn btn-primary" data-new="agendamentos">+ Novo agendamento</button>
+              </div>
+
+              <form class="record-form" id="form-agendamentos" data-form="agendamentos" novalidate hidden>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="ag-cliente">Cliente <span class="required" aria-hidden="true">*</span></label>
+                    <select id="ag-cliente" name="clienteId" required data-depends-on="clientes">
+                      <option value="">Selecione um cliente...</option>
+                    </select>
+                    <span class="field-error" id="err-ag-cliente" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="ag-barbeiro">Barbeiro <span class="required" aria-hidden="true">*</span></label>
+                    <select id="ag-barbeiro" name="barbeiroId" required data-depends-on="barbeiros">
+                      <option value="">Selecione um barbeiro...</option>
+                    </select>
+                    <span class="field-error" id="err-ag-barbeiro" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="ag-servico">Serviço <span class="required" aria-hidden="true">*</span></label>
+                    <select id="ag-servico" name="servicoId" required data-depends-on="servicos">
+                      <option value="">Selecione um serviço...</option>
+                    </select>
+                    <span class="field-error" id="err-ag-servico" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="ag-data">Data <span class="required" aria-hidden="true">*</span></label>
+                    <input type="date" id="ag-data" name="data" required>
+                    <span class="field-error" id="err-ag-data" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="ag-hora">Horário <span class="required" aria-hidden="true">*</span></label>
+                    <input type="time" id="ag-hora" name="hora" required>
+                    <span class="field-error" id="err-ag-hora" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="ag-status">Status</label>
+                    <select id="ag-status" name="status">
+                      <option value="agendado">Agendado</option>
+                      <option value="confirmado">Confirmado</option>
+                      <option value="concluido">Concluído</option>
+                      <option value="cancelado">Cancelado</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-text" data-cancel>Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar agendamento</button>
+                </div>
+              </form>
+
+              <div class="panel-list" data-list="agendamentos" aria-live="polite"></div>
+            </section>
+
+            <!-- PANEL: PAGAMENTOS -->
+            <section class="ledger-panel" id="panel-pagamentos" role="tabpanel" aria-labelledby="tab-pagamentos" tabindex="0" hidden>
+              <div class="panel-header">
+                <div>
+                  <h3>Cadastro de pagamentos</h3>
+                  <p class="panel-subtitle">Registre o pagamento vinculado a um agendamento.</p>
+                </div>
+                <button class="btn btn-primary" data-new="pagamentos">+ Novo pagamento</button>
+              </div>
+
+              <form class="record-form" id="form-pagamentos" data-form="pagamentos" novalidate hidden>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="pag-agendamento">Agendamento <span class="required" aria-hidden="true">*</span></label>
+                    <select id="pag-agendamento" name="agendamentoId" required data-depends-on="agendamentos">
+                      <option value="">Selecione um agendamento...</option>
+                    </select>
+                    <span class="field-error" id="err-pag-agendamento" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="pag-valor">Valor (R$) <span class="required" aria-hidden="true">*</span></label>
+                    <input type="number" id="pag-valor" name="valor" required min="0" step="0.01" placeholder="0,00">
+                    <span class="field-error" id="err-pag-valor" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="pag-forma">Forma de pagamento <span class="required" aria-hidden="true">*</span></label>
+                    <select id="pag-forma" name="formaPagamento" required>
+                      <option value="">Selecione...</option>
+                      <option value="dinheiro">Dinheiro</option>
+                      <option value="pix">Pix</option>
+                      <option value="debito">Cartão de débito</option>
+                      <option value="credito">Cartão de crédito</option>
+                    </select>
+                    <span class="field-error" id="err-pag-forma" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="pag-status">Status do pagamento</label>
+                    <select id="pag-status" name="status">
+                      <option value="pendente">Pendente</option>
+                      <option value="pago">Pago</option>
+                      <option value="reembolsado">Reembolsado</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-text" data-cancel>Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar pagamento</button>
+                </div>
+              </form>
+
+              <div class="panel-list" data-list="pagamentos" aria-live="polite"></div>
+            </section>
+
+            <section class="ledger-panel" id="panel-produtos" role="tabpanel" aria-labelledby="tab-produtos" tabindex="0" hidden>
+              <div class="panel-header">
+                <div>
+                  <h3>Cadastro de produtos</h3>
+                  <p class="panel-subtitle">Gerencie estoque, valor e mínimo dos produtos.</p>
+                </div>
+                <button class="btn btn-primary" data-new="produtos">+ Novo produto</button>
+              </div>
+
+              <form class="record-form" id="form-produtos" data-form="produtos" novalidate hidden>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="prod-nome">Nome do produto <span class="required" aria-hidden="true">*</span></label>
+                    <input type="text" id="prod-nome" name="nome" required maxlength="100">
+                    <span class="field-error" id="err-prod-nome" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="prod-valor">Valor (R$) <span class="required" aria-hidden="true">*</span></label>
+                    <input type="number" id="prod-valor" name="valor" required min="0" step="0.01" placeholder="0,00">
+                    <span class="field-error" id="err-prod-valor" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="field">
+                    <label for="prod-quantidade">Quantidade em estoque <span class="required" aria-hidden="true">*</span></label>
+                    <input type="number" id="prod-quantidade" name="quantidade_estoque" required min="0" step="1" placeholder="0">
+                    <span class="field-error" id="err-prod-quantidade" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="prod-minimo">Estoque mínimo <span class="required" aria-hidden="true">*</span></label>
+                    <input type="number" id="prod-minimo" name="estoque_minimo" required min="0" step="1" placeholder="0">
+                    <span class="field-error" id="err-prod-minimo" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-actions">
+                  <button type="button" class="btn btn-text" data-cancel>Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar produto</button>
+                </div>
+              </form>
+
+              <div class="panel-list" data-list="produtos" aria-live="polite"></div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true">✂</span>
+        <span class="brand-name">Barber<em>Hub</em></span>
+      </div>
+      <p class="footer-note">Barber Hub Mais que um corte, uma identidade.</p>
+    </div>
+  </footer>
+
+  <!-- Live region for toasts -->
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/modules/clientes.js"></script>
+  <script src="js/modules/barbeiros.js"></script>
+  <script src="js/modules/servicos.js"></script>
+  <script src="js/modules/agendamentos.js"></script>
+  <script src="js/modules/pagamentos.js"></script>
+  <script src="js/modules/produtos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

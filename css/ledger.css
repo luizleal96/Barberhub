@@ -1,0 +1,67 @@
+/* =========================================================
+   LEDGER — elemento de assinatura visual: o "caderno" de
+   cadastros com abas, imitando um livro de agendamentos.
+   ========================================================= */
+
+.ledger {
+  background: var(--color-charcoal-900);
+  border-radius: var(--radius-lg);
+  padding: var(--space-3) var(--space-3) 0;
+  box-shadow: var(--shadow-lifted);
+}
+
+.ledger-tabs {
+  display: flex;
+  gap: var(--space-1);
+  overflow-x: auto;
+  padding: var(--space-2) var(--space-2) 0;
+  scrollbar-width: thin;
+}
+.ledger-tabs::-webkit-scrollbar { height: 4px; }
+.ledger-tabs::-webkit-scrollbar-thumb { background: var(--color-brass-600); border-radius: 99px; }
+
+.ledger-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: transparent;
+  border: none;
+  color: var(--color-text-on-dark-muted);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  white-space: nowrap;
+  transition: background var(--duration-fast) var(--ease-standard), color var(--duration-fast) var(--ease-standard);
+}
+.ledger-tab-icon { font-size: 1.05em; }
+
+.ledger-tab:hover {
+  color: var(--color-text-on-dark);
+  background: rgba(247, 242, 231, 0.06);
+}
+
+.ledger-tab.is-active {
+  background: var(--color-cream-100);
+  color: var(--color-charcoal-900);
+}
+
+.ledger-page {
+  background: var(--color-cream-100);
+  border-radius: var(--radius-md) var(--radius-md) var(--radius-lg) var(--radius-lg);
+  padding: var(--space-6);
+  min-height: 360px;
+}
+
+.ledger-panel {
+  animation: panel-reveal var(--duration-base) var(--ease-standard);
+}
+@keyframes panel-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ledger-panel { animation: none; }
+}
+
+.ledger-panel[hidden] { display: none; }

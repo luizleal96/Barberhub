@@ -1,0 +1,73 @@
+/* =========================================================
+   RESPONSIVO — tablet e mobile
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual { order: -1; max-width: 420px; margin: 0 auto; }
+  .how-steps { grid-template-columns: repeat(2, 1fr); }
+  .module-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-2xl: 2.25rem;
+    --fs-xl: 1.875rem;
+    --fs-lg: 1.5rem;
+  }
+
+  .header-inner { padding: var(--space-3) var(--space-4); }
+  .btn-header { display: none; }
+
+  .nav-toggle { display: flex; }
+  .main-nav { position: static; }
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--color-cream-100);
+    border-bottom: 1px solid var(--color-cream-300);
+    padding: var(--space-4) var(--space-5);
+    gap: var(--space-4);
+    display: none;
+  }
+  .nav-menu.is-open { display: flex; }
+
+  .section-inner { padding: var(--space-8) var(--space-4); }
+  .hero-inner { padding: var(--space-8) var(--space-4); }
+
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn { justify-content: center; }
+
+  .hero-stats { gap: var(--space-5); flex-wrap: wrap; }
+
+  .how-steps { grid-template-columns: 1fr; gap: var(--space-5); }
+  .module-grid { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
+
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+
+  .panel-header { flex-direction: column; align-items: stretch; }
+  .panel-header .btn { width: 100%; justify-content: center; }
+
+  .record-card { flex-direction: column; align-items: stretch; gap: var(--space-3); }
+  .record-tags { flex-wrap: wrap; }
+  .record-actions { display: flex; justify-content: flex-end; }
+
+  .footer-inner { flex-direction: column; text-align: center; }
+
+  .toast-region {
+    left: var(--space-4);
+    right: var(--space-4);
+    bottom: var(--space-4);
+    max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .module-grid { grid-template-columns: 1fr; }
+  .hero-stats { flex-direction: column; gap: var(--space-3); }
+}
